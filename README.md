@@ -1,4 +1,4 @@
-<h1 align="center">Rust calculator <img high="20" weight="20" src="https://media0.giphy.com/media/EAAKR8I15yFg0RK5as/giphy.webp?cid=ecf05e47gy2ekmbqt8x06i5vpkgdfeoy07mmnmoqb7s00sdb&rid=giphy.webp&ct=g"></h1>
+<h1 align="center">Rust calculator <img src="https://media0.giphy.com/media/EAAKR8I15yFg0RK5as/giphy.webp?cid=ecf05e47gy2ekmbqt8x06i5vpkgdfeoy07mmnmoqb7s00sdb&rid=giphy.webp&ct=g" width="60"></h1>
 <p>
   This is a project where I make use of regular expressions. It was created in order to put into practice my knowledge about:
   <ul>
