@@ -1,1 +1,1 @@
-<h1>Astar speedrun</h1>
+<h1>Astar speedrun 🏃🏻</h1>
