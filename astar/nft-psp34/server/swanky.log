@@ -1,0 +1,6 @@
+[2024-02-26 12:00:41] info:
+     Running command: Init
+      Args: {"projectName":"star"}
+      Flags: {}
+      Full command: ["/Users/juminstock/.nvm/versions/node/v18.19.1/bin/node","/Users/juminstock/.nvm/versions/node/v18.19.1/bin/swanky","init","star"]
+================================================================================
