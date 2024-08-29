@@ -1,2 +1,2 @@
-<h1 align="center">Astar speedrun 🏃🏻</h1>
-<p>Este es un repositorio creado 100% para la comunidad de devs de @AstarNetwork en latinoamérica. En este repo, encontrarás guías educativas para las 3 redes disponibles en Astar.</p>
+<h1 align="center">Astar and Soneium speedrun 🏃🏻</h1>
+<p>This is a repository 100% focused on explaining the Astar Network and Soneium technologies. Here you will find all the resources, tutorials, guides and examples for your own projects.</p>
