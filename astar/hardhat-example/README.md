@@ -111,10 +111,10 @@ export default config;
 ```
 
 > [!NOTE]
-> If you're using JavaScript, [follow this Official Hardhat Guide](https://hardhat.org/hardhat-runner/docs/config).
+> If you're using JavaScript, [follow this Official Hardhat Guide ↗](https://hardhat.org/hardhat-runner/docs/config).
 
 > [!NOTE]
-> If you want to use Astar EVM, just change the RPC. Check it out the [Official Astar Documentation](https://docs.astar.network/docs/build/environment/endpoints#public-endpoints).
+> If you want to use Astar EVM, just change the RPC. Check it out the [Official Astar Documentation ↗](https://docs.astar.network/docs/build/environment/endpoints#public-endpoints).
 
 ## 5. Deploy smart contracts on Astar Network
 
@@ -152,6 +152,6 @@ npx hardhat ignition deploy ignition/modules/Rocket.ts --network zkyoto
 
 You should see an output similar to this:
 
-![Deploy output with Hardhat](/astar/hardhat-example/public/deploy-output.png).
+![Deploy output with Hardhat ↗](/astar/hardhat-example/public/deploy-output.png).
 
-5.5 As you can see, a contract address has been created, copy it and paste into [Astar zkEVM (or EVM) explorer](https://astar-zkevm.explorer.startale.com/).
+5.5 As you can see, a contract address has been created, copy it and paste into [Astar zkEVM (or EVM) explorer ↗](https://astar-zkevm.explorer.startale.com/).
