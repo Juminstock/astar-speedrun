@@ -43,3 +43,14 @@ npx hardhat init
 You should see an output similar to this:
 
 ![Hardhat CLI output](/astar/hardhat-example/public/hardhat-cli.png)
+
+> [!NOTE]
+> If you want to see more information about HardHat and this process, check it out the [Official Hardhat Documentation ↗](https://hardhat.org/hardhat-runner/docs/getting-started#overview).
+
+## Create smart contracts on Hardhat project
+
+## Configure Hardhat project to use Astar Network
+
+Once Hardhat is installed and the project created, we will can dive into the folder structure and understand what Hardhat created for us. The first thing that we have to do is change the network to deploy the contracts.
+
+## Deploy smart contracts on Astar Network
