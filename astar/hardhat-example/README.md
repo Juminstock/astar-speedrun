@@ -12,12 +12,22 @@ First, create a folder and npm project:
 mkdir hardhat-project
 cd hardhat-project
 ```
-```bash:title=hardhat-project
+```bash
 npm init
 ```
 
 Then, you need to install Hardhat:
 
-```bash:title=/hardhat-project
+```bash
 npm install --save-dev hardhat
 ```
+
+You can check if Hardhat has been installed correctly by running this command:
+
+```bash
+npx hardhat --version
+```
+
+You should see an output similar to this:
+
+![Hardhat version output](/astar/hardhat-example/public/hardhat-v-output.png)
