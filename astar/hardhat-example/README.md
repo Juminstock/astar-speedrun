@@ -49,7 +49,7 @@ You should see an output similar to this:
 
 ## Create smart contracts on Hardhat project
 
-A ```contracts``` folder has been created in the root of your project, inside this folder you will see a ```Lock.sol``` contract, you can use this template without problem. I also provide you with another template about a Rocket contract, feel free to use either one.
+A ```contracts``` folder has been created in the root of your project, inside this folder you will see a ```Lock.sol``` contract, you can use this template without problem. I also provide you with another template about a ```Rocket contract```, feel free to use either one.
 
 ### Rocket contract
 ```solidity
@@ -89,9 +89,6 @@ const config: HardhatUserConfig = {
 export default config;
 ```
 
-> [!NOTE]
-> If you're using JavaScript, [follow this Official Hardhat Guide](https://hardhat.org/hardhat-runner/docs/config).
-
 Just copy and paste this in your ```hardhat.config.ts``` file:
 
 ```typescript
@@ -112,5 +109,10 @@ const config: HardhatUserConfig = {
 
 export default config;
 ```
+
+> [!NOTE]
+> If you're using JavaScript, [follow this Official Hardhat Guide](https://hardhat.org/hardhat-runner/docs/config).
+> [!NOTE]
+> If you want to use Astar EVM, just change the RPC. Check it out the [Official Astar Documentation](https://docs.astar.network/docs/build/environment/endpoints#public-endpoints).
 
 ## Deploy smart contracts on Astar Network
