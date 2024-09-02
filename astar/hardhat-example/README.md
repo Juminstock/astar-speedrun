@@ -49,49 +49,68 @@ You should see an output similar to this:
 
 ## Create smart contracts on Hardhat project
 
-A ```contracts``` folder has been created in the root of your project, inside this folder you will see a ```Lock.sol``` contract, you can use this template without problem. I also provide you with another template about a simple currency, feel free to use either one.
+A ```contracts``` folder has been created in the root of your project, inside this folder you will see a ```Lock.sol``` contract, you can use this template without problem. I also provide you with another template about a Rocket contract, feel free to use either one.
 
-### Example coin
+### Rocket contract
 ```solidity
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.26;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
 
-// This is the enter point
-contract ExampleCoin {
-    address public minter;
-    mapping(address => uint) public balances;
+contract Rocket {
+    string public name;
+    string public status;
 
-    event Sent(address from, address to, uint amount);
-
-    // The constructor only can called once
-    constructor() {
-        minter = msg.sender;
+    constructor(string memory _name) {
+        name = _name;
+        status = "ignition";
     }
 
-    // With the requiere, only the minter just to call it
-    function mint(address receiver, uint amount) public {
-        require(msg.sender == minter);
-        balances[receiver] += amount;
-    }
-
-    // This is a custom error
-    error InsufficientBalance(uint requested, uint available);
-
-
-    // Finally, this function check the balances and transfer de funds and emit a event
-    function send(address receiver, uint amount) public {
-        if (amount > balances[msg.sender]) {
-            revert InsufficientBalance({requested: amount, available: balances[msg.sender]});
-        } else {
-            balances[msg.sender] -= amount;
-            balances[receiver] += amount;
-            emit Sent(msg.sender, receiver, amount);
-        }
+    function launch() public {
+        status = "lift-off";
     }
 }
 ```
 ## Configure Hardhat project to use Astar Network
 
-Once Hardhat is installed and the project created, we will can dive into the folder structure and understand what Hardhat created for us. The first thing that we have to do is change the network to deploy the contracts.
+Once the project and the smart contract are created, we'll need to configure the network to deploy and its RPC. Come on to configure the project to deploy on Astar EVM or Astar zkEVM.
+
+For do that, we will have to go to ```hardhat.config.ts```, this file normally lives in the root of your project. The entirety of your hardhat setup (your config, plugins and custom tasks) is contained in this file.
+
+So, if you're using TypeScript, the ```hardhat.config.ts``` file will look like this:
+
+```typescript
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox";
+
+const config: HardhatUserConfig = {
+  solidity: "0.8.24",
+};
+
+export default config;
+```
+
+> [!NOTE]
+> If you're using JavaScript, [follow this Official Hardhat Guide](https://hardhat.org/hardhat-runner/docs/config).
+
+Just copy and paste this in your ```hardhat.config.ts``` file:
+
+```typescript
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox";
+
+const config: HardhatUserConfig = {
+  solidity: "0.8.24",
+  defaultNetwork: "zkyoto",
+  networks: {
+    zkyoto: {
+      url: "https://rpc.startale.com/zkyoto",
+      chainId: 6038361,
+      accounts: ["paste-here-your-private-key"]
+    }
+  }
+};
+
+export default config;
+```
 
 ## Deploy smart contracts on Astar Network
