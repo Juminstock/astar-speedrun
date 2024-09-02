@@ -49,6 +49,47 @@ You should see an output similar to this:
 
 ## Create smart contracts on Hardhat project
 
+A ```contracts``` folder has been created in the root of your project, inside this folder you will see a ```Lock.sol``` contract, you can use this template without problem. I also provide you with another template about a simple currency, feel free to use either one.
+
+### Example coin
+```solidity
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.26;
+
+// This is the enter point
+contract ExampleCoin {
+    address public minter;
+    mapping(address => uint) public balances;
+
+    event Sent(address from, address to, uint amount);
+
+    // The constructor only can called once
+    constructor() {
+        minter = msg.sender;
+    }
+
+    // With the requiere, only the minter just to call it
+    function mint(address receiver, uint amount) public {
+        require(msg.sender == minter);
+        balances[receiver] += amount;
+    }
+
+    // This is a custom error
+    error InsufficientBalance(uint requested, uint available);
+
+
+    // Finally, this function check the balances and transfer de funds and emit a event
+    function send(address receiver, uint amount) public {
+        if (amount > balances[msg.sender]) {
+            revert InsufficientBalance({requested: amount, available: balances[msg.sender]});
+        } else {
+            balances[msg.sender] -= amount;
+            balances[receiver] += amount;
+            emit Sent(msg.sender, receiver, amount);
+        }
+    }
+}
+```
 ## Configure Hardhat project to use Astar Network
 
 Once Hardhat is installed and the project created, we will can dive into the folder structure and understand what Hardhat created for us. The first thing that we have to do is change the network to deploy the contracts.
