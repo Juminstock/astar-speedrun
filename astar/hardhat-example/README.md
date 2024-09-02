@@ -2,11 +2,11 @@
 
 This project aims to explain how to build and deploy smart contracts on Astar Network locally using Hardhat. We'll create a simple project and I'll explain how to configure it to deploy on Astar EVM y Astar zkEVM.
 
-## Install Hardhat
+## 1. Install Hardhat
 
 Hardhat is used through a local installation in your project. To install it, you need to create an npm project by going to an empty folder. Hardhat projects are ```Node.js``` projects with the hardhat package installed and a ```hardhat.config.js``` file.
 
-First, create a folder and npm project:
+1.1 First, create a folder and npm project:
 
 ```bash
 mkdir hardhat-project
@@ -16,7 +16,7 @@ cd hardhat-project
 npm init
 ```
 
-Then, you need to install Hardhat:
+1.2 Then, you need to install Hardhat:
 
 ```bash
 npm install --save-dev hardhat
@@ -32,9 +32,9 @@ You should see an output similar to this:
 
 ![Hardhat version output](/astar/hardhat-example/public/hardhat-v-output.png)
 
-## Create Hardhat project
+## 2. Create Hardhat project
 
-Once Hardhat is installed, you can create a Hardhat project. Run this command to interact with the CLI and create it: 
+2.1 Once Hardhat is installed, you can create a Hardhat project. Run this command to interact with the CLI and create it: 
 
 ```bash
 npx hardhat init 
@@ -47,7 +47,7 @@ You should see an output similar to this:
 > [!NOTE]
 > If you want to see more information about HardHat and this process, check it out the [Official Hardhat Documentation ↗](https://hardhat.org/hardhat-runner/docs/getting-started#overview).
 
-## Create smart contracts on Hardhat project
+## 3. Create smart contracts on Hardhat project
 
 A ```contracts``` folder has been created in the root of your project, inside this folder you will see a ```Lock.sol``` contract, you can use this template without problem. I also provide you with another template about a ```Rocket contract```, feel free to use either one.
 
@@ -70,7 +70,7 @@ contract Rocket {
     }
 }
 ```
-## Configure Hardhat project to use Astar Network
+## 4. Configure Hardhat project to use Astar Network
 
 Once the project and the smart contract are created, we'll need to configure the network to deploy and its RPC. Come on to configure the project to deploy on Astar EVM or Astar zkEVM.
 
@@ -115,4 +115,42 @@ export default config;
 > [!NOTE]
 > If you want to use Astar EVM, just change the RPC. Check it out the [Official Astar Documentation](https://docs.astar.network/docs/build/environment/endpoints#public-endpoints).
 
-## Deploy smart contracts on Astar Network
+## 5. Deploy smart contracts on Astar Network
+
+5.1 We´re ready to deploy our smart contract on Astar zkEVM or Astar EVM! We will have to add some more, but we´re almost ready. First, we need to add ```hardhat-ignition``` plugin with this command:
+
+```bash
+npm install --save-dev @nomicfoundation/hardhat-ignition-ethers
+```
+
+5.2 Then, we will need to create a module to deploy this contract. Inside the ```ignition``` folder in the root of your project, create a folder called ```modules``` and inside create a ```Rocket.ts``` file. Lastly, add this code to this file:
+
+```typescript
+import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
+
+export default buildModule("Apollo", (m) => {
+  const apollo = m.contract("Rocket", ["Saturn V"]);
+
+  m.call(apollo, "launch", []);
+
+  return { apollo };
+});
+```
+
+5.3 Compile your contract:
+
+```bash
+npx hardhat compile
+```
+
+5.4 Deploy your contract: 
+
+```bash
+npx hardhat ignition deploy ignition/modules/Rocket.ts --network zkyoto
+```
+
+You should see an output similar to this:
+
+![Deploy output with Hardhat](/astar/hardhat-example/public/deploy-output.png).
+
+5.5 As you can see, a contract address has been created, copy it and paste into [Astar zkEVM (or EVM) explorer](https://astar-zkevm.explorer.startale.com/).
