@@ -31,3 +31,15 @@ npx hardhat --version
 You should see an output similar to this:
 
 ![Hardhat version output](/astar/hardhat-example/public/hardhat-v-output.png)
+
+## Create Hardhat project
+
+Once Hardhat is installed, you can create a Hardhat project. Run this command to interact with the CLI and create it: 
+
+```bash
+npx hardhat init 
+```
+
+You should see an output similar to this:
+
+![Hardhat CLI output](/astar/hardhat-example/public/hardhat-cli.png)
