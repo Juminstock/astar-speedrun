@@ -112,6 +112,7 @@ export default config;
 
 > [!NOTE]
 > If you're using JavaScript, [follow this Official Hardhat Guide](https://hardhat.org/hardhat-runner/docs/config).
+
 > [!NOTE]
 > If you want to use Astar EVM, just change the RPC. Check it out the [Official Astar Documentation](https://docs.astar.network/docs/build/environment/endpoints#public-endpoints).
 
