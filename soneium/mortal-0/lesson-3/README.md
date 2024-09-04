@@ -72,9 +72,9 @@ contract Rocket {
 }
 ```
 
-## 4. Configure Hardhat project to use Astar Network
+## 4. Configure Hardhat project to use Minato testnet
 
-Once the project and the smart contract are created, we'll need to configure the network to deploy and its RPC. Come on to configure the project to deploy on Astar EVM or Astar zkEVM.
+Once the project and the smart contract are created, we'll need to configure the network to deploy and its RPC. Come on to configure the project to deploy on Minato testnet.
 
 For do that, we will have to go to ```hardhat.config.ts```, this file normally lives in the root of your project. The entirety of your hardhat setup (your config, plugins and custom tasks) is contained in this file.
 
@@ -99,7 +99,7 @@ import "@nomicfoundation/hardhat-toolbox";
 
 const config: HardhatUserConfig = {
   solidity: "0.8.24",
-  defaultNetwork: "zkyoto",
+  defaultNetwork: "minato",
   networks: {
     zkyoto: {
       url: "https://rpc.startale.com/zkyoto",
@@ -116,7 +116,7 @@ export default config;
 > If you're using JavaScript, [follow this Official Hardhat Guide ↗](https://hardhat.org/hardhat-runner/docs/config).
 
 > [!NOTE]
-> If you want to use Astar EVM, just change the RPC. Check it out the [Official Astar Documentation ↗](https://docs.astar.network/docs/build/environment/endpoints#public-endpoints).
+> If you want to use Soneium mainnet, just change the RPC. Check it out the [Official Soneium Documentation ↗](https://docs.soneium.org/docs/builders/overview).
 
 ## 5. Deploy smart contracts on Minato testnet
 
@@ -156,4 +156,4 @@ You should see an output similar to this:
 
 ![Deploy output with Hardhat ↗](/public/deploy-output.png)
 
-5.5 As you can see, a contract address has been created, copy it and paste into [Minato explorer ↗](https://astar-zkevm.explorer.startale.com/).
+5.5 As you can see, a contract address has been created, copy it and paste into [Soneium explorer ↗](https://explorer-testnet.soneium.org/).
