@@ -1,6 +1,6 @@
 # Simple project on Astar using Hardhat
 
-This project aims to explain how to build and deploy smart contracts on Astar Network locally using Hardhat. We'll create a simple project and I'll explain how to configure it to deploy on Astar EVM y Astar zkEVM.
+This project aims to explain how to build and deploy smart contracts on Astar Network locally using Hardhat. We'll create a simple project and I'll explain how to configure it to deploy on Astar EVM and Astar zkEVM.
 
 ## 1. Install Hardhat
 
@@ -118,7 +118,7 @@ export default config;
 
 ## 5. Deploy smart contracts on Astar Network
 
-5.1 We´re ready to deploy our smart contract on Astar zkEVM or Astar EVM! We will have to add some more, but we´re almost ready. First, we need to add ```hardhat-ignition``` plugin with this command:
+5.1 We're ready to deploy our smart contract on Astar zkEVM or Astar EVM! We will have to add some more, but we're almost ready. First, we need to add ```hardhat-ignition``` plugin with this command:
 
 ```bash
 npm install --save-dev @nomicfoundation/hardhat-ignition-ethers
