@@ -30,7 +30,7 @@ npx hardhat --version
 
 You should see an output similar to this:
 
-![Hardhat version output](/public/hardhat-v-output.png)
+![Hardhat version output](./public/hardhat-version.png)
 
 ## 2. Create Hardhat project
 
@@ -42,7 +42,7 @@ npx hardhat init
 
 You should see an output similar to this:
 
-![Hardhat CLI output](/public/hardhat-cli.png)
+![Hardhat CLI output](./public/hardhat-init-output.png)
 
 > [!NOTE]
 > If you want to see more information about HardHat and this process, check it out the [Official Hardhat Documentation ↗](https://hardhat.org/hardhat-runner/docs/getting-started#overview).
@@ -101,7 +101,7 @@ const config: HardhatUserConfig = {
   solidity: "0.8.24",
   defaultNetwork: "minato",
   networks: {
-    zkyoto: {
+    minato: {
       url: "https://rpc.minato.soneium.org/",
       chainId: 1946,
       accounts: ["paste-here-your-private-key"]
@@ -154,6 +154,6 @@ npx hardhat ignition deploy ignition/modules/Rocket.ts --network minato
 
 You should see an output similar to this:
 
-![Deploy output with Hardhat ↗](/public/deploy-output.png)
+![Deploy output with Hardhat](./public/deploy-minato.png)
 
 5.5 As you can see, a contract address has been created, copy it and paste into [Soneium explorer ↗](https://explorer-testnet.soneium.org/).
