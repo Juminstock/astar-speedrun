@@ -102,8 +102,8 @@ const config: HardhatUserConfig = {
   defaultNetwork: "minato",
   networks: {
     zkyoto: {
-      url: "https://rpc.startale.com/zkyoto",
-      chainId: 6038361,
+      url: "https://rpc.minato.soneium.org/",
+      chainId: 1946,
       accounts: ["paste-here-your-private-key"]
     }
   }
