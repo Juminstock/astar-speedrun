@@ -30,7 +30,7 @@ npx hardhat --version
 
 You should see an output similar to this:
 
-![Hardhat version output](/astar/hardhat-example/public/hardhat-v-output.png)
+![Hardhat version output](/public/hardhat-v-output.png)
 
 ## 2. Create Hardhat project
 
@@ -42,7 +42,7 @@ npx hardhat init
 
 You should see an output similar to this:
 
-![Hardhat CLI output](/astar/hardhat-example/public/hardhat-cli.png)
+![Hardhat CLI output](/public/hardhat-cli.png)
 
 > [!NOTE]
 > If you want to see more information about HardHat and this process, check it out the [Official Hardhat Documentation ↗](https://hardhat.org/hardhat-runner/docs/getting-started#overview).
@@ -152,6 +152,6 @@ npx hardhat ignition deploy ignition/modules/Rocket.ts --network zkyoto
 
 You should see an output similar to this:
 
-![Deploy output with Hardhat ↗](/astar/hardhat-example/public/deploy-output.png).
+![Deploy output with Hardhat ↗](/public/deploy-output.png)
 
 5.5 As you can see, a contract address has been created, copy it and paste into [Astar zkEVM (or EVM) explorer ↗](https://astar-zkevm.explorer.startale.com/).
