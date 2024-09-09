@@ -122,3 +122,9 @@ The output would be look like similar to this:
 
 If you notice, the output is a link to the explorer with the contract, copy and paste the link into your browser and you'll see the verification.
 
+## 5. Check the verification
+
+Finally, you'll see the verification section and the source code. Now, your smart contract is 100% public and anyone on blockchain can verify it. Congratulations!
+
+![check-verification-1](./public/check-verification-1.png)
+![check-verification-2](./public/check-verification-2.png)
