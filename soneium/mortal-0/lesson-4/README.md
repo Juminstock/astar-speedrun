@@ -52,4 +52,70 @@ Finally, this show us the specific configuration for Hardhat:
 
 ![configuration-output](./public/configuration-output.png)
 
-Now we can copy and paste this setting in our ```hardhat.config.ts``` file.
+Now we can copy and paste this setting in our ```hardhat.config.ts``` file, it should look like this:
+
+```typescript
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox";
+import "@nomicfoundation/hardhat-verify"
+
+const config: HardhatUserConfig = {
+  solidity: "0.8.24",
+  defaultNetwork: "minato",
+  networks: {
+    minato: {
+      url: "https://rpc.minato.soneium.org/",
+      chainId: 1946,
+      accounts: ["your-private-key-here"]
+    }
+  },
+  etherscan: {
+    apiKey: {
+      'minato': 'empty'
+    },
+    customChains: [
+      {
+        network: "minato",
+        chainId: 1946,
+        urls: {
+          apiURL: "https://explorer-testnet.soneium.org/api",
+          browserURL: "https://explorer-testnet.soneium.org"
+        }
+      }
+    ]
+  },
+  sourcify: {
+    enabled: false
+  }
+}
+
+export default config;
+```
+
+## 4. Deploy and verify the smart contract
+
+Now, we've configured everything and will be able to deploy and verify our contract. To do that, execute this command in your terminal:
+
+```bash
+npx hardhat ignition deploy ignition/modules/Rocket.ts --network minato
+```
+
+The output show you a smart contract address:
+
+![smart-contract-address](../lesson-3/public/deploy-minato.png)
+
+Copy this address and paste it into this command:
+
+```bash
+npx hardhat verify --network minato [smart-contract-address-here] [constructor-input-here]
+```
+
+For example, for the contract in this repository, the command could be:
+
+```bash
+npx hardhat verify --network minato 0x9Ed3Cd68116BD2049Cded0f2579229A13603C9B0 "carlos"
+```
+
+The output would be look like this:
+
+![verification-output]()
