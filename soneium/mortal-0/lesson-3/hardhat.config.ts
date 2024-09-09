@@ -8,9 +8,9 @@ const config: HardhatUserConfig = {
     minato: {
       url: "https://rpc.minato.soneium.org/",
       chainId: 1946,
-      accounts: ["5424a115d4a6eb41a30cdddb635decdd2cfee1b813b45870910aa2bc5dd18e41"]
+      accounts: ["your-private-key-here"]
     }
   }
-};
+}
 
 export default config;
