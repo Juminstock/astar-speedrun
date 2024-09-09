@@ -128,3 +128,9 @@ Finally, you'll see the verification section and the source code. Now, your smar
 
 ![check-verification-1](./public/check-verification-1.png)
 ![check-verification-2](./public/check-verification-2.png)
+
+### Resources
+
+[Blockscout documentation ↗](https://docs.blockscout.com/developer-support/smart-contract-verification/hardhat-verification-plugin).
+
+[Hardhat documentation ↗](https://hardhat.org/hardhat-runner/docs/guides/verifying).
